@@ -16,7 +16,7 @@ export class WeatherDetailComponent {
 
 
 
-  forecastData: WeatherData[] = [];
+  forecastData: WeatherData[] = []; //list to store the weather data 
   cityName: string = "";
   today: string = "";
 
