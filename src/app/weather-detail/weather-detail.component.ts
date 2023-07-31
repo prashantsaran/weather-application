@@ -47,7 +47,7 @@ export class WeatherDetailComponent {
 
       )
       .subscribe(
-        (data: any) => {
+        (data) => {
           this.weatherData = data;
 
 
