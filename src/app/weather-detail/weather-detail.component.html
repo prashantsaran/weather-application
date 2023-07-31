@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<div class="pl-3 mat-card-content">
+    <div class="card" style=" border-radius: 30px;">
+        <img class="" src="assets/weather.jpg" alt="Card image cap">
+        <div class="card-img-overlay">
+            <h3 class="card-title text-white l-b-0 dl"><i class="fa-solid fa-location-dot"></i>
+                {{weatherData.city.name}}'s
+                weather
+            </h3>
+            <small class="card-text text-white font-light"><i class="fa-solid fa-calendar-days"></i> {{ today | date:
+                'EEEE, MMMM d' }}
+            </small>
+        </div>
+        <div class="card-body weather-small">
+            <div class="row adjust">
+                <div class="col-1 b-r align-self-center">
+
+                    <div><i class="fa-solid fa-temperature-high"></i> <span class="image-text text-secondary">{{
+                            forecastData[0].main.temp | number:'0.0-0' }} °C</span></div>
+
+
+                </div>
+                <div class="col-3 text-center">
+                    <div class="flex-column  font-light text-secondary">
+
+                        <img src="http://openweathermap.org/img/wn/{{ forecastData[0].weather[0].icon }}@2x.png"
+                            class="image" />
+                        <span class="image-text text-secondary">{{ forecastData[0].weather[0].description | titlecase
+                            }}</span>
+
+
+                    </div>
+                </div>
+                <div class="col-2 text-center x">
+                    <div class=" row">
+
+                        <div class="column">
+                            <img src="assets/sunrise.png" alt="Sunrise Image" class="large-image">
+                            <span class="image-text text-secondary">Sunrise : {{ formattedSunrise }}</span>
+                        </div>
+
+
+                        <div class="column">
+                            <img src="assets/sunset.png" alt="Sunset Image" class="small-image">
+                            <span class="image-text text-secondary">Sunset : {{ formattedSunset }}</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3 text-center x">
+
+                    <div class=" row">
+
+                        <div class="column">
+
+                            <i class="fa-solid fa-wind large-image"></i>
+                            <span class=" image-text text-secondary">wind speed : {{ forecastData[0].wind.speed }}
+                                km/h</span>
+                        </div>
+
+
+                        <div class="column">
+                            <i class="fas fa-tint fa-fw" style="color: #868B94;"></i>
+                            <span class="image-text text-secondary ">humidity : {{forecastData[0].main.humidity}}%
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-3 text-center x">
+                    <div class=" row">
+
+                        <div class="column">
+                            <img src="assets/mintemp.png" alt="Sunrise Image" class="small-image">
+                            <span class="image-text text-secondary">min temp : {{
+                                forecastData[0].main.temp_min}}°C</span>
+                        </div>
+
+
+                        <div class="column">
+                            <img src="assets/fever.png" alt="Sunset Image" class="small-image">
+                            <span class="image-text text-secondary">max temp : {{ forecastData[0].main.temp_max
+                                }}°C</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid weather-container">
+    <h2>Next 6 days forecast :</h2>
+    <div class="row">
+        <div class="col-md-2 col-sm-6" *ngFor="let forecast of forecastData">
+            <div class="card weather-card mb-4" style="color: #4B515D; border-radius: 35px;">
+                <div class="card-body p-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 class="text-center bg-dark text-white p-2 mb-3 image-textrounded">{{ forecast.dt_txt | date:'MMM
+                                d, yyyy' }}</h6>
+                        </div>
+                    </div>
+                    <div class="row mt-4 mb-4">
+                        <div class="col-12">
+                            <h6 class="display-4 mb-0 image-text text-center" style="color: #1C2331;">Temperature:
+                                {{ forecast.main.temp }}°C</h6>
+                            <p class="text-center" style="color: #000000">{{ forecast.weather[0].description }}</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 text-md-start">
+                            <div><i class="fa-solid fa-wind"></i> <span class="ms-1">{{ forecast.wind.speed }}
+                                    </span></div>
+                            <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1">
+                                    {{forecast.main.humidity}}%
+                                </span></div>
+
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            <img src="http://openweathermap.org/img/wn/{{ forecast.weather[0].icon }}@2x.png"
+                                width="100px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

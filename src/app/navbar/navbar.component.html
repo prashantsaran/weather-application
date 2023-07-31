@@ -1,0 +1,45 @@
+<nav class="navbar  navbar-dark bg-dark">
+  
+    <p class="navbar-brand">Weather Application</p>
+  
+    <div class="container ">
+     <div class="pos">
+        <mat-form-field class="custom-form-field">
+          <mat-label>Select country</mat-label>
+          <mat-select [formControl]="countryControl" class="custom-select">
+            <mat-option *ngFor="let country of countries" [value]="country">
+              {{ country.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field class="custom-form-field">
+          <mat-label>Select city</mat-label>
+          <mat-select [formControl]="cityControl" class="custom-select">
+            <mat-option *ngFor="let city of cities | async" [value]="city">
+              {{ city }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  <div class="poss">
+      <form class="form-inline" style="display: flex;
+      padding-bottom: 20px;
+      gap: 20px; padding-left: 188px;">
+        <input type="text" class="form-control " placeholder="Name of a city" #value>
+        <button type="button" class="btn btn-secondary " (click)="searchWeather(value.value)">Search</button>
+      </form>
+    </div>
+    </div>
+  
+  </nav>
+  
+  
+  
+  <div class="row">
+    <div class="col-md-12">
+      <mat-progress-bar mode="indeterminate" class="danger-progress-bar" color="warn" *ngIf="loading"></mat-progress-bar>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>

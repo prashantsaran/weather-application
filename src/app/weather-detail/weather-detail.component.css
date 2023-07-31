@@ -1,0 +1,106 @@
+
+  
+  .top-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  mat-card {
+    width: 250px;
+  }
+  
+  mat-card::ng-deep.mat-card-header-text {
+    width: 100%;
+  }
+  
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  
+    > div {
+  
+      border-radius: 10px;
+    }
+  
+    > .outlook {
+      padding: 10px;
+      color: black;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  
+    > .temp {
+      background: lightblue;
+      padding: 10px;
+      color: black;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .big-text {
+      font-size: 30px;
+    }
+  
+    .caption {
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+  
+    
+  }
+  /* styles.css (or any other CSS file you are using) */
+.weather-container {
+    /* background-image: url("https://images.unsplash.com/photo-1487621167305-5d248087c724?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  /* styles.css (or any other CSS file you are using) */
+/* styles.css (or any other CSS file you are using) */
+.weather-card {
+    background-color: rgba(200, 200, 200, 0.5); /* Adjust the alpha value (0.5) for the desired transparency */
+    border-radius: 15px; /* Adjust the border radius as needed */
+    backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+  }
+  
+  /* styles.css (or any other CSS file you are using) */
+.big-bold-text {
+    font-size: 13px; /* Adjust the font size as needed */
+    font-weight: bold; /* Apply bold font weight */
+  }
+  
+  .fa-temperature-high {
+    font-size: 24px; /* Adjust the size as needed */
+  }
+  .text-info {
+    font-size: 18px; /* Adjust the size as needed */
+  }
+  .image-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-container img {
+    width: 10px; /* Adjust the size as needed */
+    height: auto;
+  }
+  
+  .image-text {
+    margin-left: 10px; /* Adjust the spacing between the image and text as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  /* Add this CSS to your component's CSS file or styles.scss */
+.small-image {
+    width: 30px; /* Adjust the width as needed */
+    height: auto; /* This maintains the aspect ratio */
+  }
+  .large-image{
+    width: 40px; /* Adjust the width as needed */
+    height: auto; 
+  }
+  .adjust{
+    display: flex;
+    margin:auto;
+  }

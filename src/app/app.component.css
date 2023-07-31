@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: revert;
+    
+}
+.navbar-brand{
+position: absolute;
+left: 1%;
+}
+.pos{
+    position: absolute;
+    left:20%
+}
+.poss{
+    display: flex;
+    position: relative;
+    left:30%;
+    margin:auto;
+}
