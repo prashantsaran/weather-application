@@ -4,10 +4,10 @@
         <img class="" src="assets/weather.jpg" alt="Card image cap">
         <div class="card-img-overlay">
             <h3 class="card-title text-white l-b-0 dl"><i class="fa-solid fa-location-dot"></i>
-                {{weatherData.city.name}}'s
+                {{cityData.city.name}}'s
                 weather
             </h3>
-            <small class="card-text text-white font-light"><i class="fa-solid fa-calendar-days"></i> {{ today | date:
+            <small class="card-text text-white large-image font-light"><i class="fa-solid image-text  fa-calendar-days"></i> {{ today | date:
                 'EEEE, MMMM d' }}
             </small>
         </div>
@@ -100,7 +100,8 @@
                 <div class="card-body p-4">
                     <div class="row">
                         <div class="col-12">
-                            <h6 class="text-center bg-dark text-white p-2 mb-3 image-textrounded">{{ forecast.dt_txt | date:'MMM
+                            <h6 class="text-center bg-dark text-white p-2 mb-3 image-textrounded">{{ forecast.dt_txt |
+                                date:'MMM
                                 d, yyyy' }}</h6>
                         </div>
                     </div>
@@ -114,7 +115,7 @@
                     <div class="row align-items-center">
                         <div class="col-12 col-md-6 text-md-start">
                             <div><i class="fa-solid fa-wind"></i> <span class="ms-1">{{ forecast.wind.speed }}
-                                    </span></div>
+                                </span></div>
                             <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1">
                                     {{forecast.main.humidity}}%
                                 </span></div>

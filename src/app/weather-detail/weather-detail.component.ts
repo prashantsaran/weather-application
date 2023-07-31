@@ -26,7 +26,7 @@ export class WeatherDetailComponent {
   formattedSunset: string = "";
   minTemprature: number = 0;
   maxTemprature: number = 0;
-  weatherData: CityData = {} as CityData;
+  cityData: CityData = {} as CityData;
   constructor(private weatherService: WeatherService,
     private route: ActivatedRoute, private datePipe: DatePipe) {
 
@@ -48,11 +48,11 @@ export class WeatherDetailComponent {
       )
       .subscribe(
         (data) => {
-          this.weatherData = data;
+          this.cityData = data;
 
 
-          this.formattedSunrise = this.convertTimestampToTime( this.weatherData.city.sunrise);
-          this.formattedSunset = this.convertTimestampToTime(this.weatherData.city.sunset);
+          this.formattedSunrise = this.convertTimestampToTime( this.cityData.city.sunrise);
+          this.formattedSunset = this.convertTimestampToTime(this.cityData.city.sunset);
          
       
           this.processForecastData();
@@ -65,10 +65,10 @@ export class WeatherDetailComponent {
   }
 
   processForecastData() {
-    if (this.weatherData.list) {
+    if (this.cityData.list) {
       this.forecastData = [];
       const groupedData = new Map<string, WeatherData>();
-      for (const item of this.weatherData.list) {
+      for (const item of this.cityData.list) {
         const forecastDate = new Date(item.dt_txt).toLocaleDateString(); // Get the date string
         if (!groupedData.has(forecastDate)) {
           groupedData.set(forecastDate, item); // Stored the first item of each date in the Map
